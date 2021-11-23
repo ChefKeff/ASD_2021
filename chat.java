@@ -1,15 +1,18 @@
-class Chat {
-    private String[] chattingUsers;
-    private int metaData; 
-    private String[] currentChat;
+package com.match.date;
+import java.util.*;  
 
-    public Chat(String[] chattingUsers) {
+class Chat {
+    private ArrayList<String> chattingUsers;
+    private int metaData; 
+    private ArrayList<String> currentChat;
+
+    public Chat(ArrayList<String> chattingUsers) {
         this.chattingUsers = chattingUsers;
         this.metaData = 0;
-        this.currentChat = []
+        this.currentChat = new ArrayList<String>();
     }
-}
 
-public String[] handleMessage() {
-    return []; 
-}
+    public ArrayList<String> handleMessage() {
+        return this.currentChat; 
+    }
+} 

@@ -1,24 +1,27 @@
+package com.match.date;
+import java.util.*;  
+
 class Server {
 
-    private String[] listOfUsers;
-    private String[] listOfProfiles;
+    private ArrayList<String> listOfUsers;
+    private ArrayList<String> listOfProfiles;
 
     public Server() {
-        this.listOfUsers = [];
-        this.listOfProfiles = []; 
+        this.listOfUsers = new ArrayList<String>();
+        this.listOfProfiles = new ArrayList<String>();
     }
-}
 
-public String[] sendProfileOnPreferences() {
-    return [];
-}
+    public ArrayList<String> sendProfileOnPreferences() {
+        return this.listOfProfiles;
+    }
 
-public boolean storeUser() {
-    return true;
-}
+    public boolean storeUser() {
+        return true;
+    }
 
-public boolean updateUser() {
-    return true; 
+    public boolean updateUser() {
+        return true; 
+    }
 }
 
 

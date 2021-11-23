@@ -1,19 +1,23 @@
+package com.match.date;
+import java.util.*;  
+
 class Matcher {
-    private String[] users;
+    private ArrayList<String> users;
     
     public Matcher() {
-        this.users = []
+        this.users = new ArrayList<String>();
     }
-}
 
-public boolean createRequest() {
-    return true;
-}
+    public boolean createRequest() {
+        return true;
+    }
 
-public boolean createResponse() {
-    return true; 
-}
+    public boolean createResponse() {
+        return true; 
+    }
 
-public String[] showProfilesOnPreferences() {
-    return []; 
+    public ArrayList<String> showProfilesOnPreferences() {
+        return this.users; 
+    }
+
 }

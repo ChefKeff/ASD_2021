@@ -1,34 +1,40 @@
+package com.match.date;
+import java.util.*;  
+
 class User {
     private String userID;
-    private String[] requests; 
-    private String[] matches; 
-    private String[] leftSwipes; 
+    private ArrayList<String> requests; 
+    private ArrayList<String> matches; 
+    private ArrayList<String> leftSwipes; 
     private int ssn; 
     private int userHeuristic; 
 
 
+
     public User(String userID, int ssn) {
         this.userID = userID;
-        this.requests = [];
-        this.matches = [];
-        this.leftSwipes = [];
+        this.requests = new ArrayList<String>();
+        this.matches = new ArrayList<String>();
+        this.leftSwipes = new ArrayList<String>();
         this.ssn = ssn;
         this.userHeuristic = 0; 
     }
-}
 
-public boolean logIn() {
-    return true; 
-}
+    public boolean logIn() {
+        return true; 
+    }
 
-public boolean deleteUser() {
-    return true;
-}
+    public boolean deleteUser() {
+        return true;
+    }
 
-public String[] getProfileInfo() {
-    return [];
-} 
+    public ArrayList<String> getProfileInfo() {
+        return this.matches;
+    } 
 
-public string[] getPreferences() {
-    return [];
+    public ArrayList<String> getPreferences() {
+        return this.matches;
+    }
+
+
 }

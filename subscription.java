@@ -1,20 +1,24 @@
-class Subscription {
-    private String[] tiers;
+package com.match.date;
+import java.util.*;  
 
-    public Subscription(String[] tiers) {
+class Subscription {
+    private ArrayList<String> tiers;
+
+    
+    public Subscription(ArrayList<String> tiers) {
         this.tiers = tiers; 
     }
-}
 
-public boolean verifySubscription() {
-    return true; 
-}
+    
+    public boolean verifySubscription() {
+        return true; 
+    }
 
-public boolean editSubscription() {
-    return true; 
-}
+    public boolean editSubscription() {
+        return true; 
+    }
 
-public int getPrice(String[] tiers) {
-    return 1;
+    public int getPrice(ArrayList<String> tiers) {
+        return 1;
+    }
 }
-

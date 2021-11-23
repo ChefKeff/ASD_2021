@@ -1,3 +1,6 @@
+package com.match.date;
+import java.util.*;  
+
 class Security {
     
     private int ssn;
@@ -5,12 +8,13 @@ class Security {
     public Security(int ssn){
         this.ssn = ssn; 
     }
-}
 
-public boolean verifyLogin() {
-    return true;
-}
 
-public boolean signUp() {
-    return true; 
+    public boolean verifyLogin() {
+        return true;
+    }
+
+    public boolean signUp() {
+        return true; 
+    }
 }
