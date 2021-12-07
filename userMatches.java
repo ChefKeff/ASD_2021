@@ -24,5 +24,16 @@ class UserMatches {
         //Remove match
     }
 
+    public boolean createMatch(User u1, User u2) {
+        Match newMatch = new Match(u1, u2);
+        matches.add(newMatch);
+        return true;
+    }
+
+    public boolean saveRequest(String userID) {
+        requests.add(userID); 
+        return true;
+    }
+
 
 }

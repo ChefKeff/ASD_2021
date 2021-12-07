@@ -46,9 +46,12 @@ class User {
     public void matchProccess(Matcher matcher, Server server) {
         ArrayList<String> preferences = this.getPreferences();
         ArrayList<User> users = matcher.showProfilesOnPreferences(preferences);
-        boolean match = matcher.createRequest(this.userID, users.get(0).getID(), server);
-        if(!match) {
-            //no match, create request in UserMatches
+        User currentUser = users.get(0);
+        boolean match = matcher.createRequest(this.userID, currentUser.getID(), server);
+        if(match) {
+            userMatches.createMatch(this, currentUser);
+        } else {
+            userMatches.saveRequest(currentUser.userID); 
         }
 
     }
