@@ -2,17 +2,18 @@ package com.match.date;
 import java.util.*;  
 
 class Match {
-    private String requesterID;
-    private String responderID;
+    private User requester;
+    private User responder;
+    private FeedbackAndBlock fb;
 
-    public Match(String requesterID, String responderID) {
-        this.requesterID = requesterID;
-        this.responderID = responderID; 
-    }
 
-    public boolean isMatch() {
-        return true;
-    }
+    public Match(User requester, User responder) {
+        this.requester = requester;
+        this.responder = responder; 
+        this.fb = new FeedbackAndBlock(requester, responder);
+
+    }   
+
 
     public boolean assignRequest() {
         return true;
@@ -24,5 +25,12 @@ class Match {
 
     public boolean blockUser() {
         return true; 
+    }
+
+    public void blockSequence(UserMatches um) {
+        int heuristic = fb.submitBlock();
+        if(um.updateHeuristic(heuristic)) {
+            um.removeMatch();
+        } 
     }
 }

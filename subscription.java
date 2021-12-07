@@ -2,11 +2,11 @@ package com.match.date;
 import java.util.*;  
 
 class Subscription {
-    private ArrayList<String> tiers;
+    private Tier tier;
 
     
-    public Subscription(ArrayList<String> tiers) {
-        this.tiers = tiers; 
+    public Subscription() {
+        this.tier = Tier.None; 
     }
 
     
@@ -14,11 +14,33 @@ class Subscription {
         return true; 
     }
 
-    public boolean editSubscription() {
-        return true; 
+    public Tier editSubscription(Tier newTier) {
+        if(newTier != this.tier){
+            PaymentMethod pm = new PaymentMethod(getPrice(newTier));
+            if(pm.sendBill()){
+                this.tier = newTier;
+            } 
+        } else {
+            System.out.print("You alreade have this tier");
+        }
+        return this.tier;
+         
     }
 
-    public int getPrice(ArrayList<String> tiers) {
-        return 1;
+    public int getPrice(Tier tier) {
+        switch(tier) {
+            case None:
+                return 0;
+            case Bronze:
+                return 100;
+            case Silver:
+                return 200;
+            case Gold:
+                return 300;
+            case Max:
+                return 400;
+        }
+        return 0; 
     }
+    
 }

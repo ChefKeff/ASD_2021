@@ -17,13 +17,25 @@ class Profile {
         this.pictures = new ArrayList<Image>();
         this.preferences = new ArrayList<String>();
     }
+    
 
-    public String editBio() {
-        return this.bio;
+    public ArrayList<String> getPreferences() {
+        return this.preferences;
     }
 
-    public ArrayList<Image> editPictures() {
-        return this.pictures;
+    public boolean editBio(String newBio) {
+        if(!VerifyProfle.isTextInapt()){
+            this.bio = newBio;
+            return true;
+        }
+        return false;
+    }
+    public boolean editPictures(ArrayList<Image> newPictures) {
+        if(VerifyProfle.isDickPick()){
+            this.pictures = newPictures;
+            return true;
+        }
+        return false;
     }
 
 }

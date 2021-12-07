@@ -9,8 +9,8 @@ class PaymentMethod {
     }
 
 
-    public int sendBill() {
-        return 1; 
+    public boolean sendBill() {
+        return true; 
     }
 
 }

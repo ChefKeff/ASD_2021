@@ -3,18 +3,19 @@ import java.util.*;
 
 class Security {
     
-    private int ssn;
 
-    public Security(int ssn){
-        this.ssn = ssn; 
+    static boolean verifyLogin(User currentUser) {
+        int length = UtilFunctions.lengthNumber(currentUser.getSSN());
+        if(length == 10 || length == 12){
+            return true;
+        } else {
+            return false; 
+        }
+        
     }
 
-
-    public boolean verifyLogin() {
-        return true;
-    }
-
-    public boolean signUp() {
-        return true; 
+    public User signUp(int ssn) {
+        User newUser = new User("a123kfas901kasdj12", ssn, "Alfred", 23);
+        return newUser; 
     }
 }

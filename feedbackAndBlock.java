@@ -2,11 +2,15 @@ package com.match.date;
 import java.util.*;  
 
 class FeedbackAndBlock {
-    private String senderOfFeedback;
-    private String recieverOfFeedback; 
+    private User senderOfFeedback;
+    private User recieverOfFeedback; 
 
-    public FeedbackAndBlock(String senderOfFeedback, String recieverOfFeedback) {
+    public FeedbackAndBlock(User senderOfFeedback, User recieverOfFeedback) {
         this.senderOfFeedback = senderOfFeedback;
         this.recieverOfFeedback = recieverOfFeedback; 
     }
+
+    public int submitBlock() {
+       return -100;
+    } 
 }

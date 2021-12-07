@@ -1,23 +1,22 @@
 package com.match.date;
 import java.util.*;  
+import java.awt.Image;
 
 class User {
     private String userID;
-    private ArrayList<String> requests; 
-    private ArrayList<String> matches; 
-    private ArrayList<String> leftSwipes; 
     private int ssn; 
-    private int userHeuristic; 
+    private Profile profile;
+    private Subscription subscription;
+    private UserMatches userMatches; 
 
 
 
-    public User(String userID, int ssn) {
+    public User(String userID, int ssn, String name, int age) {
         this.userID = userID;
-        this.requests = new ArrayList<String>();
-        this.matches = new ArrayList<String>();
-        this.leftSwipes = new ArrayList<String>();
         this.ssn = ssn;
-        this.userHeuristic = 0; 
+        this.profile = new Profile(name, age); 
+        this.subscription = new Subscription();
+        this.userMatches = new UserMatches(); 
     }
 
     public boolean logIn() {
@@ -28,12 +27,51 @@ class User {
         return true;
     }
 
-    public ArrayList<String> getProfileInfo() {
-        return this.matches;
+    public Profile getProfileInfo() {
+        return this.profile;
     } 
 
     public ArrayList<String> getPreferences() {
-        return this.matches;
+        return this.profile.getPreferences();
+    }
+
+    public int getSSN() {
+        return this.ssn; 
+    }
+
+    public String getID() {
+        return this.userID; 
+    }
+
+    public void matchProccess(Matcher matcher, Server server) {
+        ArrayList<String> preferences = this.getPreferences();
+        ArrayList<User> users = matcher.showProfilesOnPreferences(preferences);
+        boolean match = matcher.createRequest(this.userID, users.get(0).getID(), server);
+        if(!match) {
+            //no match, create request in UserMatches
+        }
+
+    }
+
+    public boolean subscriptionProcess() {
+        Tier returnTier = this.subscription.editSubscription(Tier.Bronze);
+        if(Tier.Bronze == returnTier) {
+            if(this.subscription.verifySubscription()) {
+                return true;
+            }
+        }
+        return false;
+         
+    }
+
+    public boolean updateProfileProcess(ArrayList<Image> images, Server server) {
+        if(this.profile.editBio("Test") && this.profile.editPictures(images)){
+            UserInformation userInfo = new UserInformation(this, server);
+            if(userInfo.isUpdated()) {
+                return true;
+            }
+        }
+        return false;
     }
 
 
