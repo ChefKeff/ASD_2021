@@ -5,7 +5,7 @@ class Security {
     
 
     static boolean verifyLogin(User currentUser) {
-        int length = UtilFunctions.lengthNumber(currentUser.getSSN());
+        long length = UtilFunctions.lengthNumber(currentUser.getSSN());
         if(length == 10 || length == 12){
             return true;
         } else {
@@ -14,8 +14,8 @@ class Security {
         
     }
 
-    public User signUp(int ssn) {
-        User newUser = new User("a123kfas901kasdj12", ssn, "Alfred", 23);
+    public User signUp(long ssn, String name, int age) {
+        User newUser = new User("a123kfas901kasdj12", ssn, name, age);
         return newUser; 
     }
 }

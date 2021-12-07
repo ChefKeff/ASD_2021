@@ -4,14 +4,14 @@ import java.awt.Image;
 
 class User {
     private String userID;
-    private int ssn; 
+    private long ssn; 
     private Profile profile;
     private Subscription subscription;
     private UserMatches userMatches; 
 
 
 
-    public User(String userID, int ssn, String name, int age) {
+    public User(String userID, long ssn, String name, int age) {
         this.userID = userID;
         this.ssn = ssn;
         this.profile = new Profile(name, age); 
@@ -35,7 +35,7 @@ class User {
         return this.profile.getPreferences();
     }
 
-    public int getSSN() {
+    public long getSSN() {
         return this.ssn; 
     }
 

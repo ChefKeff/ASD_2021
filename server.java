@@ -13,7 +13,8 @@ class Server {
         return this.listOfUsers;
     }
 
-    public boolean storeUser() {
+    public boolean storeUser(User user) {
+        this.listOfUsers.add(user);
         return true;
     }
 
@@ -29,6 +30,14 @@ class Server {
             }
         }
         return null;
+    }
+
+    public void signUpProcess(Security sec) {
+        long ssn = 190409208546L;
+        String name = "Göran Persson";
+        int age = 117;
+        User newUser = sec.signUp(ssn, name, age);
+        storeUser(newUser); 
     }
 
 }
