@@ -4,16 +4,27 @@ import java.util.*;
 class Subscription {
     private Tier tier;
 
-    
+    /**
+     * @brief constructor for Subscription object
+     */
     public Subscription() {
         this.tier = Tier.None; 
     }
 
     
+    /**
+     * @brief verifies a users subscription
+     * @return True if verification was succesfull, False otherwise
+     */
     public boolean verifySubscription() {
         return true; 
     }
 
+    /**
+     * @brief edits the users subscription
+     * @param newTier the new subscription Tier the user has chosen
+     * @return The selected Tier if the update was successfull, the previously saved Tier otherwise
+     */
     public Tier editSubscription(Tier newTier) {
         if(newTier != this.tier){
             PaymentMethod pm = new PaymentMethod(getPrice(newTier));
@@ -27,6 +38,11 @@ class Subscription {
          
     }
 
+    /**
+     * @brief fetches the price for a selected Tier
+     * @param Tier the Tier to fetch the price for
+     * @return price of selected Tier
+     */
     public int getPrice(Tier tier) {
         switch(tier) {
             case None:
