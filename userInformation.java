@@ -14,7 +14,6 @@ class UserInformation {
         this.currentUser = currentUser;
         this.server = server; 
     }
-
     /**
      * @brief checks if the User is equal to the one saved in the Server abd updates if not
      * @return True if update was successfull, False otherwise 

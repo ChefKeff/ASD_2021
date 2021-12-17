@@ -10,7 +10,6 @@ class VerifyProfle {
     static boolean isDickPick(){
         return false;
     }
-
     /**
      * @brief checks if text for bio is inappropriate
      * @return True if text is inappropriate, False otherwise 

@@ -45,7 +45,6 @@ class Profile {
         }
         return false;
     }
-
     /**
      * @brief edits the users pictures
      * @param newPictures the users new pictures

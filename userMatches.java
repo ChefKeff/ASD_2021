@@ -46,7 +46,6 @@ class UserMatches {
         matches.add(newMatch);
         return true;
     }
-
     /**
      * @brief saves a request to a user if a match wasnt made
      * @param userID id of the user that requested the match
